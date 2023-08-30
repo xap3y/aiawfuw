@@ -1,51 +1,55 @@
 <div class="Lsidebar w-[90vh] h-[100vh] flex flex-col pt-[10%]">
-    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[10%]">
+    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[15%] mb-3 border-slate-600 border-2 rounded-2xl">
         <h3>Rank upgrade</h3>
         <div class="flex">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="rankFirst" src="/icons/vip.png" class="hidden">
             </div>
-            <img draggable="false" class="arrowIMG" src="/icons/arrowR.png">
+            <img draggable="false" id="rankArrow" class="arrowIMG" src="/icons/arrowR.png">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="rankSec" src="/icons/vip.png" class="hidden">
             </div>
         </div>
         <div class="flex">
-            <h4 class="text-white">Cost: <h4 id="rankCost" class="text-white ml-2 mr-4"> 0</h4></h4>
-            <button onclick="buyItem('rank')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
+            <h4 id="rankCostText" class="text-white">Cost: <h4 id="rankCost" class="text-white ml-2 mr-1"> 0</h4></h4>
+            <img id="rankC" draggable="false" src="/icons/McDonald_CZ.png" class="w-5 h-5 mr-4">
+            <button id="rankBuyBut" onclick="buyItem('rank')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
         </div>
     </div>
 
-    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[10%]">
+    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[15%] mb-3 border-slate-600 border-2 rounded-2xl">
         <h3>Tool upgrade</h3>
         <div class="flex">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="toolFirst" src="/icons/vip.png" class="hidden">
             </div>
-            <img draggable="false" class="arrowIMG" src="/icons/arrowR.png">
+            <img id="toolArrow" draggable="false" class="arrowIMG" src="/icons/arrowR.png">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="toolSec" src="/icons/vip.png" class="hidden">
             </div>
         </div>
         <div class="flex">
-            <h4 class="text-white">Cost: <h4 id="toolCost" class="text-white ml-2 mr-4"> 0</h4></h4>
-            <button onclick="buyItem('tool')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
+            <h4 id="toolCostText" class="text-white">Cost: <h4 id="toolCost" class="text-white ml-2 mr-1"> 0</h4></h4>
+            <img id="toolC" draggable="false" src="/icons/McDonald_CZ.png" class="w-5 h-5 mr-4">
+            <button id="toolBuyBut" onclick="buyItem('tool')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
         </div>
     </div>
-    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[10%]">
+    
+    <div class="shopItem w-[40%] ml-[10%] mr-[50%] mt-[5%] h-[15%] mb-9 border-slate-600 border-2 rounded-2xl">
         <h3>Armor upgrade</h3>
         <div class="flex">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="armorFirst" src="/icons/vip.png" class="hidden">
             </div>
-            <img draggable="false" class="arrowIMG" src="/icons/arrowR.png">
+            <img id="armorArrow" draggable="false" class="arrowIMG" src="/icons/arrowR.png">
             <div class="LsbImg w-[90px] h-[50px] ml-[2px] mb-[2px]">
                 <img draggable="false" id="armorSec" src="/icons/vip.png" class="hidden">
             </div>
         </div>
         <div class="flex">
-            <h4 class="text-white">Cost: <h4 id="armorCost" class="text-white ml-2 mr-4"> 0</h4></h4>
-            <button onclick="buyItem('armor')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
+            <h4 id="armorCostText" class="text-white">Cost: <h4 id="armorCost" class="text-white ml-2 mr-1"> 0</h4></h4>
+            <img id="armorC" draggable="false" src="/icons/McDonald_CZ.png" class="w-5 h-5 mr-4">
+            <button id="armorBuyBut" onclick="buyItem('armor')" class="w-11 h-6 text-white bg-slate-400">BUY</button>
         </div>
     </div>
 </div>
