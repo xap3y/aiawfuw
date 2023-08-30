@@ -187,7 +187,7 @@ const armors = [
     },
     {
         name: "Maddo batphone",
-        path: "/icons/maddo.png",
+        path: "/icons/maddox.png",
         cost: 600000,
         add: 2200
     },
@@ -213,7 +213,6 @@ $(document).ready(() => {
     audioElement.addEventListener('ended', function() {
         this.play();
     }, false);
-
 
     $('#mainButton').click(function() {
         if (playing == 0) {
