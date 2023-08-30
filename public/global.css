@@ -97,20 +97,10 @@ h3{
     margin-left: 15px;
 }
 
-@media all and (max-width: 600px) and (orientation:portrait) 
+@media all and (max-width: 600px)
 {
     *{
         display: none;
-    }
-}
-
-
-
-
-
-@media all and (max-width: 600px) and (orientation:landscape) 
-{
-    *{
-        display: none;
+        visibility: hidden;
     }
 }
