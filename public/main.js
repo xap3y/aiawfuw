@@ -74,7 +74,7 @@ const ranks = [
         name: "LoL challenger",
         path: "/icons/lolko.png",
         cost: 5000000,
-        add: 3600
+        add: 70000
     }
 ]
 
@@ -199,13 +199,29 @@ const armors = [
     {
         name: "Divan Armor set",
         path: "/icons/divanset.png",
-        cost: 3000000,
-        add: 5700
+        cost: 2200000,
+        add: 60900
     }
 ]
 
+let playing = 0;
+
 $(document).ready(() => {
-    console.log("main.js loaded")
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', './piggies.mp3');
+    audioElement.addEventListener('ended', function() {
+        this.play();
+    }, false);
+
+
+    $('#mainButton').click(function() {
+        if (playing == 0) {
+            playing = 1
+            audioElement.volume = 0.05
+            audioElement.play();
+        }
+    });
+
     if (localStorage.getItem("balance") > 0) {
         balance = parseInt(localStorage.getItem("balance"))
     }
@@ -267,6 +283,13 @@ const updateShop = () => {
     
 
     $("#balanceNum").html(balance)
+
+    $('#pauseButton').click(function() {
+        audioElement.pause();
+    });
+
+    console.log("main.js loaded")
+    console.log("created by xap3y")
 }
 
 function buyItem(type){
@@ -317,6 +340,7 @@ function buyItem(type){
 
 function mainButton() {
     balance+=5
+    
     balance+=armors[currentUprgadeArmor].add
 
     balance+=tools[currentUprgadeTool].add

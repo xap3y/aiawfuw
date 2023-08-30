@@ -22,6 +22,26 @@
     cursor: url('/icons/cursor5.png'), pointer;
 }
 
+.cursor6{
+    cursor: url('/icons/cursor6.png'), pointer;
+}
+
+.cursor7{
+    cursor: url('/icons/cursor7.png'), pointer;
+}
+
+.cursor8{
+    cursor: url('/icons/cursor8.png'), pointer;
+}
+
+.cursor9{
+    cursor: url('/icons/cursor9.png'), pointer;
+}
+
+.cursor10{
+    cursor: url('/icons/cursor10.png'), pointer;
+}
+
 *{
     -webkit-user-select: none;
     -webkit-touch-callout: none;
