@@ -114,6 +114,36 @@ const tools = [
         path: "/icons/homdia.png",
         cost: 26000,
         add: 400
+    },
+    {
+        name: "Glock-18 from cs:go",
+        path: "/icons/glock18.webp",
+        cost: 66666,
+        add: 660
+    },
+    {
+        name: "Terminator",
+        path: "/icons/terminator.gif",
+        cost: 120000,
+        add: 1000
+    },
+    {
+        name: "Machine Gun",
+        path: "/icons/machinegun.webp",
+        cost: 200000,
+        add: 1420
+    },
+    {
+        name: "Lego Brick 2x4",
+        path: "/icons/legobrick.png",
+        cost: 500000,
+        add: 1600
+    },
+    {
+        name: "Portal Gun",
+        path: "/icons/portalgun.png",
+        cost: 200000,
+        add: 2700
     }
 ]
 
@@ -154,6 +184,24 @@ const armors = [
         cost: 250000,
         add: 2000
     },
+    {
+        name: "Maddox batphone",
+        path: "/icons/maddox.png",
+        cost: 600000,
+        add: 2200
+    },
+    {
+        name: "Ender Armor set",
+        path: "/icons/enderarmor.png",
+        cost: 800000,
+        add: 2600
+    },
+    {
+        name: "Divan Armor set",
+        path: "/icons/divanset.png",
+        cost: 3000000,
+        add: 3300
+    }
 ]
 
 $(document).ready(() => {
@@ -182,12 +230,29 @@ $(document).ready(() => {
     $("#rankFirst").show()
     $("#armorFirst").show()
 
-    if (currentUprgade == 1 || currentUprgade == 1) {
+    if (currentUprgade == 1 || currentUprgade == 2) {
         $("#mainText").css('color', "green")
     } else if (currentUprgade == 3 || currentUprgade == 4) {
         $("#mainText").css('color', "aqua")
     } else if (currentUprgade == 5) {
         $("#mainText").css('color', "magenta")
+    } else if (currentUprgade == 6 || currentUprgade == 7) {
+        $("#mainText").css('color', "gold")
+    } else if (currentUprgade == 8) {
+        $("#mainText").css('color', "blue")
+    } else if (currentUprgade == 9) {
+        $("#mainText").css('color', "crimson")
+    } else if (currentUprgade == 10) {
+        $("#mainText").css('color', "darkviolet")
+    } else if (currentUprgade == 11) {
+        $("#mainText").css('color', "goldenrod")
+    }
+
+    if(currentUprgadeTool > 0) {
+        $("#mainClick").removeClass(`cursor0`)
+        $('main').removeClass(`cursor0`)
+        $("#mainClick").addClass(`cursor${currentUprgadeTool}`)
+        $('main').addClass(`cursor${currentUprgadeTool}`)
     }
 })
 
@@ -217,6 +282,16 @@ function buyItem(type){
                 $("#mainText").css('color', "aqua")
             } else if (currentUprgade == 5) {
                 $("#mainText").css('color', "magenta")
+            } else if (currentUprgade == 6) {
+                $("#mainText").css('color', "gold")
+            } else if (currentUprgade == 8) {
+                $("#mainText").css('color', "blue")
+            } else if (currentUprgade == 9) {
+                $("#mainText").css('color', "crimson")
+            } else if (currentUprgade == 10) {
+                $("#mainText").css('color', "darkviolet")
+            } else if (currentUprgade == 11) {
+                $("#mainText").css('color', "goldenrod")
             }
         }
     } else if (type == "tool") {
@@ -249,7 +324,7 @@ function mainButton() {
     balance+=ranks[currentUprgade].add
 
     localStorage.setItem("balance", balance);
-    reloadShop()
+    reloadShop2()
     $("#balanceNum").html(balance)
 }
 
@@ -281,7 +356,7 @@ function reloadShop(){
         $("#rankCostText").hide()
     }
 
-    if (currentUprgadeTool != 5) {
+    if (currentUprgadeTool != 10) {
         $("#toolCost").html(tools[currentUprgadeTool+1].cost)
         $("#toolSec").attr('src', tools[currentUprgadeTool+1].path)
         if (balance < tools[currentUprgadeTool+1].cost) {
@@ -300,7 +375,7 @@ function reloadShop(){
         $("#toolCostText").hide()
     }
 
-    if (currentUprgadeArmor != 5) {
+    if (currentUprgadeArmor != 8) {
         $("#armorCost").html(armors[currentUprgadeArmor+1].cost)
         $("#armorSec").attr('src', armors[currentUprgadeArmor+1].path)
         if (balance < armors[currentUprgadeArmor+1].cost) {
@@ -317,5 +392,32 @@ function reloadShop(){
         $("#armorC").hide()
         $("#armorBuyBut").hide()
         $("#armorCostText").hide()
+    }
+}
+
+function reloadShop2(){
+
+    if (currentUprgade != 11) {
+        if (balance < ranks[currentUprgade+1].cost) {
+            $("#rankCost").css('color', 'red');
+        } else {
+            $("#rankCost").css('color', 'green');
+        }
+    }
+
+    if (currentUprgadeTool != 10) {
+        if (balance < tools[currentUprgadeTool+1].cost) {
+            $("#toolCost").css('color', 'red');
+        } else {
+            $("#toolCost").css('color', 'green');
+        }
+    }
+
+    if (currentUprgadeArmor != 8) {
+        if (balance < armors[currentUprgadeArmor+1].cost) {
+            $("#armorCost").css('color', 'red');
+        } else {
+            $("#armorCost").css('color', 'green');
+        }
     }
 }
