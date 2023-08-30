@@ -49,6 +49,7 @@
     -ms-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
+    touch-action: auto;
 }
 
 body{
