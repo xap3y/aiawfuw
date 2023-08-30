@@ -97,10 +97,20 @@ h3{
     margin-left: 15px;
 }
 
-@media all and (max-width: 600px)
+@media only screen and (max-width: 500px)
 {
     *{
-        display: none;
-        visibility: hidden;
+        display: none!important;
+        visibility: hidden!important;
+    }
+
+    main{
+        display: none!important;
+        visibility: hidden!important;
+    }
+
+    div{
+        display: none!important;
+        visibility: hidden!important;
     }
 }
