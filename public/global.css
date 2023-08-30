@@ -1,8 +1,63 @@
+*{
+    cursor: url('/public/icons/drill.png'), auto;
+}
+
 body{
     background-color: black;
+    cursor: url('/public/icons/drill.png'), auto;
 }
 
 #JeySen h2{
     font-family: 'VT323', monospace;
     font-size: 48px;
+}
+
+h3{
+    color: white;
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+}
+
+.LsbImg img{
+    height: 100%;
+    width: 100%;
+}
+
+.arrowIMG{
+    height: 50px;
+    width: 150px;
+}
+
+#balanceText{
+    font-family: 'ADLaM Display', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: start;
+}
+
+#balanceDiv{
+    max-width: 900px;
+    overflow: scroll;
+}
+
+#balanceNum{
+    color: white;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+@media all and (max-width: 600px) and (orientation:portrait) 
+{
+    mobil jse pro kokoty :)
+}
+
+
+
+
+
+@media all and (max-width: 600px) and (orientation:landscape) 
+{
+   
 }
