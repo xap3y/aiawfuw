@@ -1,10 +1,29 @@
-*{
-    cursor: url('/public/icons/drill.png'), auto;
+.cursor0{
+    cursor: url('/icons/cursor0.png'), pointer;
+}
+
+.cursor1{
+    cursor: url('/icons/cursor1.png'), pointer;
+}
+
+.cursor2{
+    cursor: url('/icons/cursor2.png'), pointer;
+}
+
+.cursor3{
+    cursor: url('/icons/cursor3.png'), pointer;
+}
+
+.cursor4{
+    cursor: url('/icons/cursor4.png'), pointer;
+}
+
+.cursor5{
+    cursor: url('/icons/cursor5.png'), pointer;
 }
 
 body{
-    background-color: black;
-    cursor: url('/public/icons/drill.png'), auto;
+    background-color: #2d2b2a;
 }
 
 #JeySen h2{

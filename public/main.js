@@ -99,6 +99,22 @@ const armors = [
 
 $(document).ready(() => {
     console.log("main.js loaded")
+    if (localStorage.getItem("balance") > 0) {
+        balance = parseInt(localStorage.getItem("balance"))
+    }
+
+
+    if (localStorage.getItem("currentUprgade") > 0) {
+        currentUprgade = parseInt(localStorage.getItem("currentUprgade"))
+    }
+
+    if (localStorage.getItem("currentUprgadeTool") > 0) {
+        currentUprgadeTool= parseInt(localStorage.getItem("currentUprgadeTool"))
+    }
+    if (localStorage.getItem("currentUprgadeArmor") > 0) {
+        currentUprgadeArmor = parseInt(localStorage.getItem("currentUprgadeArmor"))
+    }
+
     updateShop();
     $("#toolFirst").show()
     $("#rankFirst").show()
@@ -107,6 +123,14 @@ $(document).ready(() => {
     $("#toolSec").show()
     $("#rankSec").show()
     $("#armorSec").show()
+
+    if (currentUprgade == 1 || currentUprgade == 1) {
+        $("#mainText").css('color', "green")
+    } else if (currentUprgade == 3 || currentUprgade == 4) {
+        $("#mainText").css('color', "aqua")
+    } else if (currentUprgade == 5) {
+        $("#mainText").css('color', "magenta")
+    }
 })
 
 const updateShop = () => {
@@ -175,6 +199,7 @@ function buyItem(type){
         if (balance >= ranks[currentUprgade+1].cost) {
             balance -= ranks[currentUprgade+1].cost
             currentUprgade++
+            localStorage.setItem("currentUprgade", currentUprgade);
             updateShop()
             if (currentUprgade == 1) {
                 $("#mainText").css('color', "green")
@@ -187,19 +212,64 @@ function buyItem(type){
     } else if (type == "tool") {
         if (balance >= tools[currentUprgadeTool+1].cost) {
             balance -= tools[currentUprgadeTool+1].cost
+            $('main').removeClass(`cursor${currentUprgadeTool}`)
             currentUprgadeTool++
+            localStorage.setItem("currentUprgadeTool", currentUprgadeTool);
+            $('main').addClass(`cursor${currentUprgadeTool}`)
             updateShop()
         }
     } else if (type == "armor") {
         if (balance >= armors[currentUprgadeArmor+1].cost) {
             balance -= armors[currentUprgadeArmor+1].cost
             currentUprgadeArmor++
+            localStorage.setItem("currentUprgadeArmor", currentUprgadeArmor);
             updateShop()
         }
     }
 }
 
 function mainButton() {
-    balance++
+    balance+=5
+    if (currentUprgadeArmor == 1) {
+        balance+=50
+    } else if (currentUprgadeArmor == 2) {
+        balance+=230
+    } else if (currentUprgadeArmor == 3) {
+        balance+=600
+    }
+
+    if (currentUprgade == 1) {
+        balance+=30
+    } else if (currentUprgade == 2) {
+        balance+=90
+    } else if (currentUprgade == 3) {
+        balance+=180
+    } else if (currentUprgade == 4) {
+        balance+=300
+    } else if (currentUprgade == 5) {
+        balance+=400
+    } else if (currentUprgade == 6) {
+        balance+=700
+    }
+
+    if (currentUprgadeTool == 1) {
+        balance+=30
+    } else if (currentUprgade == 2) {
+        balance+=90
+    } else if (currentUprgade == 3) {
+        balance+=180
+    } else if (currentUprgade == 4) {
+        balance+=300
+    } else if (currentUprgade == 5) {
+        balance+=400
+    }
+    localStorage.setItem("balance", balance);
     updateShop2()
+}
+
+function reset(){
+    localStorage.setItem("currentUprgadeArmor", 0);
+    localStorage.setItem("currentUprgade", 0);
+    localStorage.setItem("currentUprgadeTool", 0);
+    localStorage.setItem("balance", 0);
 }
