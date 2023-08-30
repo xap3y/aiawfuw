@@ -200,7 +200,7 @@ const armors = [
         name: "Divan Armor set",
         path: "/icons/divanset.png",
         cost: 3000000,
-        add: 3300
+        add: 5700
     }
 ]
 
