@@ -2,7 +2,8 @@ let currentUprgade = 0;
 let currentUprgadeTool = 0;
 let currentUprgadeArmor = 0;
 let balance = 0;
-
+let cps = 0;
+let oldbal = 0;
 const ranks = [
     {
         name: "default",
@@ -185,8 +186,8 @@ const armors = [
         add: 2000
     },
     {
-        name: "Maddox batphone",
-        path: "/icons/maddox.png",
+        name: "Maddo batphone",
+        path: "/icons/maddo.png",
         cost: 600000,
         add: 2200
     },
@@ -247,15 +248,15 @@ $(document).ready(() => {
     $("#armorFirst").show()
 
     if (currentUprgade == 1 || currentUprgade == 2) {
-        $("#mainText").css('color', "green")
+        $("#mainTet").css('color', "green")
     } else if (currentUprgade == 3 || currentUprgade == 4) {
-        $("#mainText").css('color', "aqua")
+        $("#mainTet").css('color', "aqua")
     } else if (currentUprgade == 5) {
-        $("#mainText").css('color', "magenta")
+        $("#mainTet").css('color', "magenta")
     } else if (currentUprgade == 6 || currentUprgade == 7) {
-        $("#mainText").css('color', "gold")
+        $("#mainTet").css('color', "gold")
     } else if (currentUprgade == 8) {
-        $("#mainText").css('color', "blue")
+        $("#mainTet").css('color', "blue")
     } else if (currentUprgade == 9) {
         $("#mainText").css('color', "crimson")
     } else if (currentUprgade == 10) {
@@ -340,7 +341,7 @@ function buyItem(type){
 
 function mainButton() {
     balance+=5
-    
+    cps++
     balance+=armors[currentUprgadeArmor].add
 
     balance+=tools[currentUprgadeTool].add
@@ -445,3 +446,14 @@ function reloadShop2(){
         }
     }
 }
+
+setInterval(function(){
+    if (cps > 9) {
+        balance = oldbal
+        balance -= 150
+        alert("Autoclicker :(")
+        updateShop()
+    }
+    oldbal = balance
+    cps = 0
+} ,475);
