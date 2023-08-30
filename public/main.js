@@ -213,8 +213,10 @@ function buyItem(type){
         if (balance >= tools[currentUprgadeTool+1].cost) {
             balance -= tools[currentUprgadeTool+1].cost
             $('main').removeClass(`cursor${currentUprgadeTool}`)
+            $("#mainClick").removeClass(`cursor${currentUprgadeTool}`)
             currentUprgadeTool++
             localStorage.setItem("currentUprgadeTool", currentUprgadeTool);
+            $("#mainClick").addClass(`cursor${currentUprgadeTool}`)
             $('main').addClass(`cursor${currentUprgadeTool}`)
             updateShop()
         }

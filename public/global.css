@@ -22,6 +22,15 @@
     cursor: url('/icons/cursor5.png'), pointer;
 }
 
+*{
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 body{
     background-color: #2d2b2a;
 }
